@@ -3,10 +3,15 @@ HTML, CSS, JavaScript
 
 ## Llaves de encriptación
 "e" -> "enter"
+
 "i" -> "imes"
+
 "a" -> "ai"
+
 "o" -> "ober"
+
 "u" -> "ufat"
+
 
 ## Requisitos
 - Debe funcionar sólo con letras minúsculas
