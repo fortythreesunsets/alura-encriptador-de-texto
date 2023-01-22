@@ -12,7 +12,6 @@ HTML, CSS, JavaScript
 
 "u" -> "ufat"
 
-
 ## Requisitos
 - Debe funcionar sólo con letras minúsculas
 - No utilizar letras con acentos ni caracteres especiales
@@ -29,6 +28,7 @@ HTML, CSS, JavaScript
 - **Texto**: Área para ingresar texto
 - **Mensaje**: Área para mostrar texto encriptado/desencriptado: comenzará con una imagen que debe ser sustituida por el texto encriptado/desencriptado y por un botón para copiar el resultado
 - **Botones**: Área para botones de encriptado y desencriptado
+
 
 ## + Información
 https://regex101.com/
