@@ -93,15 +93,17 @@ function copiar() {
     boton_desencriptar.disabled = false;
     boton_encriptar.disabled = false;
     let copiar_texto = document.getElementById("resultado").innerHTML;
-    if (media_query_tableta.matches || media_query_celular.matches) {
-        copiar_texto.select();
-        copiar_texto.setSelectionRange(0, 99999);
-        navigator.clipboard.writeText(copiar_texto);
+    // let copiar_texto = document.getElementById("resultado");
+    // copiar_texto.select();
+    // copiar_texto.setSelectionRange(0, 99999); // Para dispositivos móviles
+    navigator.clipboard.writeText(copiar_texto)
+    .then(() => {
+        // alert("Texto copiado");
         setTimeout(tooltip, 10);
-    } else {
-        navigator.clipboard.writeText(copiar_texto);
-        setTimeout(tooltip, 10);
-    }
+    })
+    .catch(() => {
+        alert("no se copió el texto");
+    });
     // Limpiar textarea
     document.getElementById("texto_ingresado").value = "";
 }
