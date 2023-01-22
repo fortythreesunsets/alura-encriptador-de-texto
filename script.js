@@ -27,7 +27,7 @@ function encriptar() {
     boton_desencriptar.disabled = true;
     let texto_ingresado = document.getElementById("texto_ingresado").value;
     if (texto_ingresado == "") {
-    alert("Escribe un mensaje para poder encriptar encriptarlo");
+    alert("Escribe un mensaje para poder encriptarlo");
     } else {
         let texto_minusculas = texto_ingresado.toLowerCase();
         let texto_e = texto_minusculas.replaceAll("e", vocal_e);
@@ -93,7 +93,12 @@ function copiar() {
     boton_desencriptar.disabled = false;
     boton_encriptar.disabled = false;
     let copiar_texto = document.getElementById("resultado").innerHTML;
-    navigator.clipboard.writeText(copiar_texto);
+    if (media_query_tableta.matches || media_query_celular.matches) {
+        copiar_texto.select();
+        copiar_texto.setSelectionRange(0, 99999);
+    } else {
+        navigator.clipboard.writeText(copiar_texto);
+    }
     setTimeout(tooltip, 10);
     // Limpiar textarea
     document.getElementById("texto_ingresado").value = "";
