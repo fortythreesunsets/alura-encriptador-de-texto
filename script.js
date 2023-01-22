@@ -23,14 +23,18 @@ const boton_copiar = document.querySelector("#btn_copiar");
 var media_query_tableta = window.matchMedia("(max-width: 800px)");
 var media_query_celular = window.matchMedia("(max-width: 720px)");
 
+// function normalizarTexto() {
+//    TO DO
+// }
+
 function encriptar() {
     boton_desencriptar.disabled = true;
     let texto_ingresado = document.getElementById("texto_ingresado").value;
     if (texto_ingresado == "") {
     alert("Escribe un mensaje para poder encriptarlo");
     } else {
-        let texto_minusculas = texto_ingresado.toLowerCase();
-        let texto_e = texto_minusculas.replaceAll("e", vocal_e);
+        let texto_normalizado = texto_ingresado.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+        let texto_e = texto_normalizado.replaceAll("e", vocal_e);
         let texto_i = texto_e.replaceAll("i", vocal_i);
         let texto_a = texto_i.replaceAll("a", vocal_a);
         let texto_o = texto_a.replaceAll("o", vocal_o);
@@ -93,16 +97,12 @@ function copiar() {
     boton_desencriptar.disabled = false;
     boton_encriptar.disabled = false;
     let copiar_texto = document.getElementById("resultado").innerHTML;
-    // let copiar_texto = document.getElementById("resultado");
-    // copiar_texto.select();
-    // copiar_texto.setSelectionRange(0, 99999); // Para dispositivos móviles
     navigator.clipboard.writeText(copiar_texto)
     .then(() => {
-        // alert("Texto copiado");
         setTimeout(tooltip, 10);
     })
     .catch(() => {
-        alert("no se copió el texto");
+        alert("No se copió el texto");
     });
     // Limpiar textarea
     document.getElementById("texto_ingresado").value = "";

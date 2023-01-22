@@ -65,3 +65,4 @@ To https://github.com/fortythreesunsets/alura-encriptador-de-texto.git
 
 ## + Información
 https://regex101.com/
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize
