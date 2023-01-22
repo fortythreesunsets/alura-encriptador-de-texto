@@ -96,9 +96,11 @@ function copiar() {
     if (media_query_tableta.matches || media_query_celular.matches) {
         copiar_texto.select();
         copiar_texto.setSelectionRange(0, 99999);
+        document.execCommand('copy');
     } else {
         navigator.clipboard.writeText(copiar_texto);
     }
+    
     setTimeout(tooltip, 10);
     // Limpiar textarea
     document.getElementById("texto_ingresado").value = "";
