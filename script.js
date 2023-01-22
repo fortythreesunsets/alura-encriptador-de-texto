@@ -20,8 +20,8 @@ const boton_encriptar = document.querySelector("#btn_encriptar");
 const boton_desencriptar = document.querySelector("#btn_desencriptar");
 const boton_copiar = document.querySelector("#btn_copiar");
 
-var media_query_tableta = window.matchMedia("(max-width: 768px)");
-var media_query_celular = window.matchMedia("(max-width: 360px)");
+var media_query_tableta = window.matchMedia("(max-width: 800px)");
+var media_query_celular = window.matchMedia("(max-width: 720px)");
 
 function encriptar() {
     boton_desencriptar.disabled = true;
@@ -96,9 +96,12 @@ function copiar() {
     if (media_query_tableta.matches || media_query_celular.matches) {
         copiar_texto.select();
         copiar_texto.setSelectionRange(0, 99999);
-    } 
-    navigator.clipboard.writeText(copiar_texto);
-    setTimeout(tooltip, 10);
+        navigator.clipboard.writeText(copiar_texto);
+        setTimeout(tooltip, 10);
+    } else {
+        navigator.clipboard.writeText(copiar_texto);
+        setTimeout(tooltip, 10);
+    }
     // Limpiar textarea
     document.getElementById("texto_ingresado").value = "";
 }

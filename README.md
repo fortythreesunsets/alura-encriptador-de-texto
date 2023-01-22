@@ -29,7 +29,7 @@ HTML, CSS, JavaScript
 - **Mensaje**: Área para mostrar texto encriptado/desencriptado: comenzará con una imagen que debe ser sustituida por el texto encriptado/desencriptado y por un botón para copiar el resultado
 - **Botones**: Área para botones de encriptado y desencriptado
 
-## GitHub
+## Actualizar GitHub 
 1. `git pull origin main`
 ```
 From https://github.com/fortythreesunsets/alura-encriptador-de-texto
