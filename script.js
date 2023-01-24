@@ -21,8 +21,9 @@ const boton_desencriptar = document.querySelector("#btn_desencriptar");
 const boton_copiar = document.querySelector("#btn_copiar");
 const boton_reiniciar = document.querySelector("#btn_reiniciar");
 
-var media_query_tableta = window.matchMedia("(max-width: 800px)");
-var media_query_celular = window.matchMedia("(max-width: 720px)");
+var media_query_dispositivos_g = window.matchMedia("(max-width: 1080px)");
+var media_query_dispositivos_m = window.matchMedia("(max-width: 800px)");
+var media_query_dispositivos_ch = window.matchMedia("(max-width: 720px)");
 
 function normalizarTexto(texto) {
     let texto_normalizado = texto.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
@@ -47,17 +48,18 @@ function encriptar() {
         document.querySelector(".mensaje_procesado").style.visibility = "visible";
         document.getElementById("resultado").innerHTML = texto_u;
         boton_copiar.style.visibility = "visible";
-
-       if (media_query_tableta.matches) {
-            document.querySelector(".texto").style.height = "450px";
-            document.querySelector(".mensaje").style.top = "35rem";
-            document.querySelector(".mensaje").style.height = "200px";
-            document.querySelector(".mensaje_procesado").style.height = "280px";
-            document.querySelector(".botones").style.bottom = "23rem";
-            document.querySelector("footer").style.margin = "655px 0";
+        
+        if (media_query_dispositivos_m.matches) {
+            document.querySelector(".texto").style.height = "350px";
+            document.querySelector(".mensaje").style.top = "25rem";
+            document.querySelector(".mensaje").style.height = "480px";
+            document.querySelector(".mensaje_procesado").style.height = "480px";
+            document.querySelector("#resultado").style.height = "400px";
+            document.querySelector(".botones").style.bottom = "9rem";
+            document.querySelector("footer").style.margin = "38rem 0 0 0";
         }
 
-        if (media_query_celular.matches) {
+        if (media_query_dispositivos_ch.matches) {
             document.querySelector(".texto").style.height = "360px";
             document.querySelector(".mensaje").style.top = "36rem";
             document.querySelector(".mensaje").style.left = "15px";
@@ -68,6 +70,7 @@ function encriptar() {
             document.querySelector("footer").style.position = "relative";
             document.querySelector("footer").style.top = "4rem";
         }
+        
     }
 }
 
