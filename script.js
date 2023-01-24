@@ -31,12 +31,13 @@ function normalizarTexto(texto) {
 }
 
 function encriptar() {
-    boton_desencriptar.disabled = true;
     let texto_ingresado = document.getElementById("texto_ingresado").value;
 
     if (texto_ingresado == "") {
         alert("Escribe un mensaje para poder encriptarlo");
+        boton_desencriptar.disabled = false;
     } else {
+        boton_desencriptar.disabled = true;
         let texto_normalizado = normalizarTexto(texto_ingresado);
         let texto_e = texto_normalizado.replaceAll("e", vocal_e);
         let texto_i = texto_e.replaceAll("i", vocal_i);
@@ -75,15 +76,14 @@ function encriptar() {
 }
 
 function desencriptar() {
-    boton_encriptar.disabled = true;
     let texto_ingresado = document.getElementById("texto_ingresado").value;
 
     if (texto_ingresado == "") {
         alert("Escribe un mensaje para poder desencriptarlo");
         boton_encriptar.disabled = false;
     } else {
+        boton_encriptar.disabled = true;
         let texto_normalizado = normalizarTexto(texto_ingresado);
-        
         let texto_enc_e = texto_normalizado.replaceAll(regexp_e, "e");
         let texto_enc_i = texto_enc_e.replaceAll(regexp_i, "i");
         let texto_enc_a = texto_enc_i.replaceAll(regexp_a, "a");
@@ -130,6 +130,7 @@ function reiniciar() {
     boton_desencriptar.disabled = false;
     boton_encriptar.disabled = false;
     boton_reiniciar.style.visibility = "hidden";
+    //TO DO: regresar a layout en móvil (tamaño de textarea y p), 
 }
 
 boton_encriptar.onclick = encriptar;

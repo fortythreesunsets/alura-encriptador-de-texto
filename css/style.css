@@ -124,6 +124,8 @@ main {
   background-color: white;
   border: 1px solid #0a3871;
   margin-top: 0.95rem;
+  z-index: 1;
+  
 }
 
 .mensaje .mensaje_procesado #btn_copiar:hover {
@@ -180,6 +182,7 @@ button {
   border-radius: 24px;
   cursor: pointer;
   margin: 0 0.5rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
 button:disabled,
@@ -202,18 +205,31 @@ button[disabled]:hover {
   border: none;
 }
 
+#btn_encriptar:hover {
+  box-shadow: inset 450px 0 0 0 #2b93c8;
+}
+
 #btn_desencriptar {
   color: #0a3871;
   background-color: #d8dfe8;
   border: 1px solid #0a3871;
 }
 
+#btn_desencriptar:hover {
+  box-shadow: inset -450px 0 0 0 #2b93c8;
+  color: white;
+  border: none;
+}
+
 #btn_reiniciar {
   background-color: #2b93c8;
   color: white;
   border: none;
-  opacity: 0.7;
   visibility: hidden;
+}
+
+#btn_reiniciar:hover {
+  background-color: #46b5ed;
 }
 
 /* Sección footer */
@@ -305,79 +321,68 @@ footer .copyright {
       position: absolute;
       padding: 0;
       width: 980px;
-      height: 900px;
+      height: 1000px;
       top: 180px;
       left: 50px;
+      margin: 0 40px;
     }
   
     .texto #texto_ingresado {
-      font-size: 1.5rem;
-      height: 100%;
-      width: 95%;
+      font-size: 2rem;
+      height: 98%;
       padding: 10px;
       overflow: auto;
       overflow-wrap: break-word;
     }
   
     .mensaje {
-      top: 45.5rem;
-      left: 80px;
+      top: 75rem;
+      left: 100px;
       margin: 0;
-      width: 900px;
-      height: 300px;
+      padding: 0;
+      width: 840px;
+      height: 900px;
       float: none;
     }
   
     .mensaje .contenedor_ayuda .dibujo {
         position: absolute;
-        height: 85%;
-        top: 2rem;
+        height: 60%;
+        top: 19rem;
+        left: 6rem;
       }
     
       .mensaje .contenedor_ayuda .contenedor_informacion {
         top: 8.5rem;
+        left: 7rem;
         width: 640px;
       }
   
     .mensaje .contenedor_ayuda .contenedor_informacion h3 {
-      font-size: 30px;
+      font-size: 2.5rem;
     }
   
     .mensaje .contenedor_ayuda .contenedor_informacion p {
-      font-size: 20px;
+      font-size: 2rem;
       margin-top: 1.5rem;
     }
   
     .mensaje .mensaje_procesado {
-      border-radius: 32px;
-      margin: 0 -25px;
-      width: 688px;
-      height: 340px;
-      /*height: 600px;*/
+      margin: 0;
+      width: 840px;
+      height: 900px;
     }
   
     .mensaje .mensaje_procesado p {
-      margin: 20px;
       padding: 10px;
-      font-size: 1.2rem;
-      width: 624px;
-      height: 150px;
-      /*
-      margin: 2rem 0.5rem;
-        padding: 0.8rem;
-        height: 500px;
-        text-align: start;
-      */
+      font-size: 1.5rem;
+      width: 780px;
+      height: 900px;
     }
   
     .mensaje .mensaje_procesado #btn_copiar {
-      width: 90%;
-      margin-top: 8rem;
       padding: 20px;
-      /*
-      width: 75%;
-      margin-bottom: 1.8rem;
-      */
+      margin-bottom: 3rem;
     }
   
     .mensaje .mensaje_procesado .tooltip {
@@ -386,7 +391,7 @@ footer .copyright {
   
     .botones {
       width: 900px;
-      bottom: 70rem;
+      top: 69rem;
       left: 2rem;
       margin: 0 60px;
     }
@@ -411,12 +416,16 @@ footer .copyright {
       width: 400px;
       height: 65px;
       font-size: 1.3rem;
-      /* cursor: pointer; */
     }
-  
+
+    #btn_reiniciar {
+      margin-left: 210px;
+      margin-top: 15px;
+    }
+
     footer {
-      margin: 900px 0;
-      font-size: 1.3rem;
+      margin-top: 1300px;
+      font-size: 1.4rem;
     }
   }
 
@@ -443,7 +452,7 @@ footer .copyright {
   }
 
   .texto #texto_ingresado {
-    font-size: 1.5rem;
+    font-size: 2rem;
     height: 100%;
     width: 100%;
     padding: 10px;
@@ -502,10 +511,6 @@ footer .copyright {
     padding: 20px;
   }
 
-  .mensaje .mensaje_procesado .tooltip {
-    bottom: 20%;
-  }
-
   .botones {
     width: 688px;
     height: 120px;
@@ -538,11 +543,6 @@ footer .copyright {
   }
 
   #btn_reiniciar {
-    background-color: #2b93c8;
-    color: white;
-    border: none;
-    opacity: 0.7;
-    visibility: hidden;
     margin-left: 180px;
     margin-top: -10px;
   }

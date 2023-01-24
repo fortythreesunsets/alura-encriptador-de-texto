@@ -22,7 +22,7 @@ HTML, CSS, JavaScript
 ## Extras
 - Un botón que copie el texto encriptado/desencriptado en el portapapeles, o sea que tenga la misma funcionalidad del CTRL+C o de la opción "copiar" del menú de las aplicaciones.
 - Footer con los datos de la persona que desarrolló el sitio web
-- Responsive (dispositivos X-Small, Small, Medium, Large, X-Large y XX-Large)
+- Responsive (dispositivos Small, Medium, Large, X-Large)
 - Botón reiniciar para que haga refresh a la página después de desencriptar
 - Tooltip que aparece al hacer click en el botón copiar
 - Pedir a usuario que ingrese un texto si presiona los botones de encriptar o desencriptar sin haber escrito nada
