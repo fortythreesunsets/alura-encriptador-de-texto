@@ -231,6 +231,10 @@ footer .copyright {
 /* RESPONSIVE */
 /* PC: 1600×900 */
 @media screen and (max-width: 1600px) {
+  .logo_alura {
+    margin: 40px 0px 40px 40px;
+  }
+
   .texto #texto_ingresado {
     overflow: auto;
     overflow-wrap: break-word;
@@ -278,6 +282,8 @@ footer .copyright {
 
   footer {
     font-size: 0.8rem;
+    margin: 0;
+    padding: 0 0 10px 0;
   }
 
   footer .copyright {
@@ -286,7 +292,11 @@ footer .copyright {
 }
 
 /* Tablet: 800x1280 (portrait) 1280x800 (landscape)*/
-@media screen and (max-width: 800px) and (min-width: 768px) and (orientation: portrait) {
+@media screen and (min-width: 800px) and (orientation: portrait) {
+  body {
+    overflow-y: hidden;
+  }
+
   .logo_alura {
     width: 10%;
     margin: 60px 0 25px 20px;
@@ -311,9 +321,10 @@ footer .copyright {
   }
 
   .mensaje {
-    top: 45.5rem;
+    top: 56rem;
     left: 60px;
     margin: 0;
+    padding: 10px 0;
     width: 640px;
     height: 100px;
     float: none;
@@ -365,8 +376,10 @@ footer .copyright {
 
   .botones {
     width: 688px;
-    bottom: 10rem;
+    height: 120px;
+    bottom: 20rem;
     left: 40px;
+    padding: 10px 0;
   }
 
   .botones .contenedor_instrucciones {
@@ -389,13 +402,17 @@ footer .copyright {
     width: 300px;
     height: 55px;
     font-size: 0.9rem;
-    margin: 0 20px 20px 20px;
-    /* cursor: pointer; */
+    margin: 5px 20px 20px 20px;
   }
 
   footer {
-    margin: 900px 0;
+    margin: 59rem 0 0 0;
     font-size: 0.75rem;
+  }
+
+  footer .copyright {
+    margin: 0;
+    padding: 0;
   }
 }
 

@@ -34,6 +34,7 @@ HTML, CSS, JavaScript
 
 ## Crear repositorio en Git
 1. En la carpeta del proyecto, dar click derecho > Git Bash Here
+   
    1.1  Si es la primera vez que se usa git , configurar usuario y email
    `git config --global user.name "Tu nombre de Usuario"`
    `git config --global user.email "tu@email.com"`
@@ -95,4 +96,5 @@ To https://github.com/fortythreesunsets/alura-encriptador-de-texto.git
 
 ## + Información
 https://regex101.com/
+
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize
