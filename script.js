@@ -16,18 +16,51 @@ const regexp_i = /imes/g;
 const regexp_o = /ober/g;
 const regexp_u = /ufat/g;
 
+// Botones
 const boton_encriptar = document.querySelector("#btn_encriptar");
 const boton_desencriptar = document.querySelector("#btn_desencriptar");
 const boton_copiar = document.querySelector("#btn_copiar");
 const boton_reiniciar = document.querySelector("#btn_reiniciar");
 
-var media_query_dispositivos_g = window.matchMedia("(max-width: 1080px)");
-var media_query_dispositivos_m = window.matchMedia("(max-width: 800px)");
-var media_query_dispositivos_ch = window.matchMedia("(max-width: 720px)");
-
 function normalizarTexto(texto) {
     let texto_normalizado = texto.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
     return texto_normalizado;
+}
+
+function acomodarEnDispositivos() {
+    // screen.orientation.lock('landscape');
+    // var media_query_dispositivos_g = window.matchMedia("(max-width: 1080px)");
+    var media_query_dispositivos_m = window.matchMedia("(max-width: 800px)");
+    var media_query_dispositivos_ch = window.matchMedia("(max-width: 720px)");
+    
+    if (media_query_dispositivos_m.matches) {
+        document.querySelector(".texto").style.height = "380px";
+        document.querySelector(".mensaje").style.top = "37rem";
+        document.querySelector(".mensaje").style.height = "480px";
+        document.querySelector(".mensaje_procesado").style.height = "480px";
+        document.querySelector("#resultado").style.height = "400px";
+        document.querySelector(".botones").style.top = "31rem";
+        document.querySelector("footer").style.margin = "39rem 0 0 0";
+    }
+
+    if (media_query_dispositivos_ch.matches) {
+        document.querySelector(".texto").style.height = "360px";
+        document.querySelector(".mensaje").style.top = "36rem";
+        document.querySelector(".mensaje").style.left = "15px";
+        document.querySelector(".mensaje").style.height = "540px";
+        document.querySelector(".mensaje_procesado").style.height = "540px";
+        document.querySelector(".botones").style.bottom = "2rem";
+        document.querySelector("footer").style.margin = "527px 0";
+        document.querySelector("footer").style.position = "relative";
+        document.querySelector("footer").style.top = "4rem";
+    }
+}
+
+function cambiarEstilos(resultado) {
+        document.querySelector(".contenedor_ayuda").style.visibility = "hidden";
+        document.querySelector(".mensaje_procesado").style.visibility = "visible";
+        document.getElementById("resultado").innerHTML = resultado;
+        boton_copiar.style.visibility = "visible";
 }
 
 function encriptar() {
@@ -45,33 +78,8 @@ function encriptar() {
         let texto_o = texto_a.replaceAll("o", vocal_o);
         let texto_u = texto_o.replaceAll("u", vocal_u);
 
-        document.querySelector(".contenedor_ayuda").style.visibility = "hidden";
-        document.querySelector(".mensaje_procesado").style.visibility = "visible";
-        document.getElementById("resultado").innerHTML = texto_u;
-        boton_copiar.style.visibility = "visible";
-        
-        if (media_query_dispositivos_m.matches) {
-            document.querySelector(".texto").style.height = "350px";
-            document.querySelector(".mensaje").style.top = "25rem";
-            document.querySelector(".mensaje").style.height = "480px";
-            document.querySelector(".mensaje_procesado").style.height = "480px";
-            document.querySelector("#resultado").style.height = "400px";
-            document.querySelector(".botones").style.bottom = "9rem";
-            document.querySelector("footer").style.margin = "38rem 0 0 0";
-        }
-
-        if (media_query_dispositivos_ch.matches) {
-            document.querySelector(".texto").style.height = "360px";
-            document.querySelector(".mensaje").style.top = "36rem";
-            document.querySelector(".mensaje").style.left = "15px";
-            document.querySelector(".mensaje").style.height = "540px";
-            document.querySelector(".mensaje_procesado").style.height = "540px";
-            document.querySelector(".botones").style.bottom = "2rem";
-            document.querySelector("footer").style.margin = "527px 0";
-            document.querySelector("footer").style.position = "relative";
-            document.querySelector("footer").style.top = "4rem";
-        }
-        
+        cambiarEstilos(texto_u);
+        acomodarEnDispositivos();
     }
 }
 
@@ -90,10 +98,9 @@ function desencriptar() {
         let texto_enc_o = texto_enc_a.replaceAll(regexp_o, "o");
         let texto_enc_u = texto_enc_o.replaceAll(regexp_u, "u");
 
-        document.querySelector(".contenedor_ayuda").style.visibility = "hidden";
-        document.querySelector(".mensaje_procesado").style.visibility = "visible";
-        document.getElementById("resultado").innerHTML = texto_enc_u;
-        boton_copiar.style.visibility = "visible";
+        cambiarEstilos(texto_enc_u);
+
+        acomodarEnDispositivos();
     }
 }
 
@@ -123,14 +130,7 @@ function copiar() {
 }
 
 function reiniciar() {
-    document.getElementById("texto_ingresado").value = "";
-    document.getElementById("resultado").innerHTML = "";
-    document.querySelector(".contenedor_ayuda").style.visibility = "visible";
-    boton_copiar.style.visibility = "hidden";
-    boton_desencriptar.disabled = false;
-    boton_encriptar.disabled = false;
-    boton_reiniciar.style.visibility = "hidden";
-    //TO DO: regresar a layout en móvil (tamaño de textarea y p), 
+    window.location.reload(); 
 }
 
 boton_encriptar.onclick = encriptar;

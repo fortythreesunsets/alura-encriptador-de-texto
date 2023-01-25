@@ -311,7 +311,7 @@ footer .copyright {
 
 /* Dispositivos G (hasta 1080px)
   Celular: 1080x2460 (portrait) 2460x1080 (landscape)*/
- /* @media screen and (max-width: 1080px)  {
+/* @media screen and (max-width: 1080px)  {
     .logo_alura {
       width: 15%;
       margin: 60px 0 25px 20px;
@@ -452,7 +452,7 @@ footer .copyright {
   }
 
   .texto #texto_ingresado {
-    font-size: 2rem;
+    font-size: 1.5rem;
     height: 100%;
     width: 100%;
     padding: 10px;
@@ -463,39 +463,36 @@ footer .copyright {
   .mensaje {
     top: 56rem;
     left: 60px;
-    margin: 0;
+    margin: 0 20px;
     padding: 0;
     width: 640px;
-    height: 100px;
+    height: 150px;
     float: none;
   }
 
   .mensaje .contenedor_ayuda .dibujo {
-    position: absolute;
-    height: 60%;
-    top: 10rem;
-    left: 9rem;
-    /* display: none; */
+    display: none;
   }
 
   .mensaje .contenedor_ayuda .contenedor_informacion {
     top: 30px;
     width: 640px;
-    top: 5rem;
+    top: 4rem;
   }
 
   .mensaje .contenedor_ayuda .contenedor_informacion h3 {
     font-size: 1.8rem;
+    margin-bottom: 0.5rem;
   }
 
   .mensaje .contenedor_ayuda .contenedor_informacion p {
     font-size: 1.3rem;
-    margin-top: 1.5rem;
+    margin-top: 0.8rem;
   }
 
   .mensaje .mensaje_procesado {
     border-radius: 32px;
-    margin: 0 -25px; /* top and bottom | left and right */
+    margin: 0 -25px;
     width: 688px;
     height: 340px;
   }
@@ -556,7 +553,7 @@ footer .copyright {
   }
 
   footer {
-    margin: 61rem 0 0 0;
+    margin: 60rem 0 0 0;
     font-size: 0.75rem;
   }
 
@@ -566,6 +563,11 @@ footer .copyright {
   }
 }
 
+@media screen and (orientation: landscape) {
+  footer {
+    margin-top: 7rem;
+  }
+}
 /* Dispositivos CH (hasta 720px) 
   Celular: 720x1440 (portrait) 1440x720 (landscape)*/
 /*@media screen and (max-width: 720px) {
