@@ -311,7 +311,7 @@ footer .copyright {
 
 /* Dispositivos G (hasta 1080px)
   Celular: 1080x2460 (portrait) 2460x1080 (landscape)*/
-  @media screen and (max-width: 1080px) and (min-width: 900px) and (orientation: portrait) {
+ /* @media screen and (max-width: 1080px)  {
     .logo_alura {
       width: 15%;
       margin: 60px 0 25px 20px;
@@ -428,7 +428,7 @@ footer .copyright {
       font-size: 1.4rem;
     }
   }
-
+*/
 
 /* Dispositivos M (hasta 800px)
   Tablet: 800x1280 (portrait) 1280x800 (landscape)*/
@@ -471,21 +471,25 @@ footer .copyright {
   }
 
   .mensaje .contenedor_ayuda .dibujo {
-    display: none;
+    position: absolute;
+    height: 60%;
+    top: 10rem;
+    left: 9rem;
+    /* display: none; */
   }
 
   .mensaje .contenedor_ayuda .contenedor_informacion {
     top: 30px;
     width: 640px;
+    top: 5rem;
   }
 
   .mensaje .contenedor_ayuda .contenedor_informacion h3 {
-    font-size: 20px;
-    margin-top: -0.5rem;
+    font-size: 1.8rem;
   }
 
   .mensaje .contenedor_ayuda .contenedor_informacion p {
-    font-size: 15px;
+    font-size: 1.3rem;
     margin-top: 1.5rem;
   }
 
@@ -509,6 +513,10 @@ footer .copyright {
     width: 90%;
     margin: 20px;
     padding: 20px;
+  }
+
+  .mensaje .mensaje_procesado .tooltip {
+    bottom: 20%;
   }
 
   .botones {
@@ -560,7 +568,7 @@ footer .copyright {
 
 /* Dispositivos CH (hasta 720px) 
   Celular: 720x1440 (portrait) 1440x720 (landscape)*/
-@media screen and (max-width: 720px) and (min-width: 360px) and (orientation: portrait) {
+/*@media screen and (max-width: 720px) {
   .logo_alura {
     width: 10%;
     margin: 60px 0 25px 20px;
@@ -664,7 +672,6 @@ footer .copyright {
     height: 55px;
     font-size: 0.9rem;
     margin: 0 20px 20px 20px;
-    /* cursor: pointer; */
   }
 
   footer {
@@ -672,3 +679,4 @@ footer .copyright {
     font-size: 0.75rem;
   }
 }
+*/
