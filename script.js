@@ -45,14 +45,13 @@ function acomodarEnDispositivos() {
 
     if (media_query_dispositivos_ch.matches) {
         document.querySelector(".texto").style.height = "360px";
-        document.querySelector(".mensaje").style.top = "36rem";
-        document.querySelector(".mensaje").style.left = "15px";
+        document.querySelector(".mensaje").style.top = "40rem";
         document.querySelector(".mensaje").style.height = "540px";
         document.querySelector(".mensaje_procesado").style.height = "540px";
-        document.querySelector(".botones").style.bottom = "2rem";
+        document.querySelector("#btn_copiar").style.margin= "0";
+        document.querySelector("#resultado").style.height = "400px";
         document.querySelector("footer").style.margin = "527px 0";
-        document.querySelector("footer").style.position = "relative";
-        document.querySelector("footer").style.top = "4rem";
+        document.querySelector("footer").style.margin = "43rem 0 0 0";
     }
 }
 

@@ -563,30 +563,31 @@ footer .copyright {
   }
 }
 
-@media screen and (orientation: landscape) {
+@media screen and (max-width: 1280) and (orientation: landscape) {
   footer {
     margin-top: 7rem;
   }
 }
 /* Dispositivos CH (hasta 720px) 
   Celular: 720x1440 (portrait) 1440x720 (landscape)*/
-/*@media screen and (max-width: 720px) {
+@media screen and (max-width: 720px) {
   .logo_alura {
-    width: 10%;
+    width: 20%;
     margin: 60px 0 25px 20px;
   }
 
   .texto {
     position: absolute;
-    padding: 0;
+    padding: 10px;
     width: 650px;
-    height: 700px;
+    height: 600px;
     top: 130px;
-    left: 40px;
+    left: 20px;
+    margin: 20px;
   }
 
   .texto #texto_ingresado {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     height: 100%;
     width: 100%;
     padding: 10px;
@@ -595,11 +596,11 @@ footer .copyright {
   }
 
   .mensaje {
-    top: 60rem;
+    top: 50rem;
     left: 40px;
     margin: 0;
     width: 640px;
-    height: 100px;
+    height: 200px;
     float: none;
   }
 
@@ -608,33 +609,32 @@ footer .copyright {
   }
 
   .mensaje .contenedor_ayuda .contenedor_informacion {
-    top: 30px;
+    top: 80px;
     width: 640px;
   }
 
   .mensaje .contenedor_ayuda .contenedor_informacion h3 {
-    font-size: 20px;
-    margin-top: -0.5rem;
+    font-size: 2rem;
+    margin-top: -1.5rem;
   }
 
   .mensaje .contenedor_ayuda .contenedor_informacion p {
-    font-size: 15px;
+    font-size: 1.5rem;
     margin-top: 1.5rem;
   }
 
   .mensaje .mensaje_procesado {
-    border-radius: 32px;
-    margin: 0 -25px;
-    width: 688px;
-    height: 340px;
+    margin: 0;
+    width: 640px;
+    height: 400px;
   }
 
   .mensaje .mensaje_procesado p {
     margin: 20px;
     padding: 10px;
     font-size: 1.2rem;
-    width: 624px;
-    height: 150px;
+    width: 620px;
+    height: 500px;
   }
 
   .mensaje .mensaje_procesado #btn_copiar {
@@ -644,17 +644,22 @@ footer .copyright {
   }
 
   .mensaje .mensaje_procesado .tooltip {
-    bottom: 15%;
+    bottom: 20%;
   }
 
   .botones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 688px;
-    bottom: 5rem;
+    height: 300px;
+    top: 45rem;
     left: 20px;
   }
 
   .botones .contenedor_instrucciones {
-    margin: 0 20px 0 17px;
+    margin-left: 60px;
+    align-self: flex-start;
   }
 
   .botones .contenedor_instrucciones .bi-exclamation-circle-fill {
@@ -664,21 +669,31 @@ footer .copyright {
   }
 
   .botones .contenedor_instrucciones p {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     margin: 0;
     padding: 12px;
   }
 
   button {
-    width: 300px;
-    height: 55px;
-    font-size: 0.9rem;
+    width: 80%;
+    height: 60px;
+    font-size: 1.4rem;
     margin: 0 20px 20px 20px;
   }
 
+  #btn_reiniciar {
+    margin-left: 20px;
+    margin-top: 5px;
+  }
+
   footer {
-    margin: 1120px 0;
-    font-size: 0.75rem;
+    margin-top: 65rem;
+    font-size: 1rem;
   }
 }
-*/
+
+@media screen and (max-width: 1440px) and (orientation: landscape) {
+  footer {
+    margin-top: 2rem;
+  }
+}
